@@ -68,6 +68,7 @@
     <Compile Include="Assets\Assets\script\Manager\cardManager.cs" />
     <Compile Include="Assets\Assets\Resource\Card\ScriptTableObject\cardData\CardData.cs" />
     <Compile Include="Assets\Assets\script\Card\CardTranform.cs" />
+    <Compile Include="Assets\Assets\script\Card\CardDragHander.cs" />
     <Compile Include="Assets\Assets\script\Card\Card.cs" />
   </ItemGroup>
   <ItemGroup>
