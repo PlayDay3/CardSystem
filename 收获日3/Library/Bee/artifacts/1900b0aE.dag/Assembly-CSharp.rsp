@@ -385,6 +385,7 @@
 "Assets/Assets/Resource/Card/ScriptTableObject/CardLibrary/CardLibrarySo.cs"
 "Assets/Assets/script/Card/Card.cs"
 "Assets/Assets/script/Card/CardDeck.cs"
+"Assets/Assets/script/Card/CardDragHander.cs"
 "Assets/Assets/script/Card/CardTranform.cs"
 "Assets/Assets/script/Manager/CardLayoutManager.cs"
 "Assets/Assets/script/Manager/cardManager.cs"

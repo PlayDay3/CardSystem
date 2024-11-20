@@ -73,16 +73,14 @@ public class CardDeck : MonoBehaviour
         for (int i=0;i< CurrentDeck.Count; i++)
         {
             Card currentCard = CurrentDeck[i];
-            CardTranform cardTranform = CardLayoutManager.GetCardTranform(i);//获取位置
-            
-            
+            CardTranform cardTranform = CardLayoutManager.GetCardTranform(i);//获取位置            
 
             currentCard.transform.DOScale(Vector3.one, 1f).onComplete = () =>
             {
                 currentCard.transform.DOMove(cardTranform.Positon, 1f);
                 currentCard.transform.DORotateQuaternion(cardTranform.rotation, 1f);
             };
-
+            currentCard.SetOriginalData(cardTranform.Positon, cardTranform.rotation, i);//设置卡牌原始值
 
 
             currentCard.GetComponent<SortingGroup>().sortingOrder = i;
