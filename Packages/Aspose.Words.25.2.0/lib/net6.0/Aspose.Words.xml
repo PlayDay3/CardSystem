@@ -1,0 +1,585 @@
+<?xml version="1.0"?>
+<doc>
+  <assembly>
+    <name>Aspose.Words</name>
+  </assembly>
+  <members>
+    <member name="T:Aspose.Words.IDocumentConverterPlugin">
+      <summary>
+            Defines an interface for external converter plugin.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.IDocumentMergerPlugin">
+      <summary>
+            Defines an interface for external merger plugin that can merge Pdf documents.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.IRevisionCriteria">
+      <summary>
+            Implement this interface if you want to control when certain <see cref="T:Aspose.Words.Revision" /> should be accepted/rejected
+            or not by the <see cref="M:Aspose.Words.RevisionCollection.Accept(Aspose.Words.IRevisionCriteria)" />/<see cref="M:Aspose.Words.RevisionCollection.Reject(Aspose.Words.IRevisionCriteria)" /> methods.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.IDocumentReaderPlugin">
+      <summary>
+            Defines an interface for external reader plugins that can read a file into a document.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.IHyphenationCallback">
+      <summary>
+            Implemented by classes which can register hyphenation dictionaries.
+            </summary>
+    </member>
+    <member name="M:Aspose.Words.IHyphenationCallback.RequestDictionary(System.String)">
+      <summary>
+            Notifies application that hyphenation dictionary for the specified language wasn't found and may need to be registered.<para />
+            Implementation should find a dictionary and register it using <see cref="M:Aspose.Words.Hyphenation.RegisterDictionary(System.String,System.IO.Stream)" /> methods.<para />
+            If dictionary is unavailable for the specified language implementation can opt out of further calls for the same language
+            using <see cref="M:Aspose.Words.Hyphenation.RegisterDictionary(System.String,System.String)" /> with <c>null</c> value.
+            </summary>
+      <param name="language">A language name, e.g. "en-US". See .NET documentation for "culture name" and RFC 4646 for details.</param>
+      <remarks>Exceptions thrown by this method will abort execution of page layout process.</remarks>
+    </member>
+    <member name="T:Aspose.Words.IWarningCallback">
+      <summary>
+            Implement this interface if you want to have your own custom method called to 
+            capture loss of fidelity warnings that can occur during document loading or saving.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.INodeChangingCallback">
+      <summary>
+            Implement this interface if you want to receive notifications when nodes are inserted or removed in the document.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words</b> namespace provides classes for generating, converting, modifying,
+            rendering and printing Microsoft Word documents without utilizing Microsoft Word.</p>
+        <p>Aspose.Words is written completely in C#, CLS compliant and contains only safe managed code. Microsoft Word is not required in order to use Aspose.Words.</p>
+        <p>The classes in the <b>Aspose.Words</b> namespace borrow best practices from two well-known frameworks:
+            Microsoft Word Automation and System.Xml. 
+            A document in Aspose.Words is represented by a tree of nodes, much like in XML DOM. 
+            Where possible, class, method and property names match those found in Microsoft Word Automation. </p>
+        <p>The main classes in this namespace are:</p>
+        <list type="bullet">
+          <item>
+            <see cref="T:Aspose.Words.Document" />
+            is the main class of the object model that represents a Microsoft Word document.</item>
+          <item>
+            <see cref="T:Aspose.Words.DocumentBuilder" />
+            provides an easy way to insert content and formatting into a document.</item>
+          <item>
+            <see cref="T:Aspose.Words.Node" />
+            is the base class for all nodes in the document.</item>
+          <item>
+            <see cref="T:Aspose.Words.CompositeNode" />
+            is the base class for all nodes of the document that can contain other nodes, for example
+            <see cref="T:Aspose.Words.Paragraph" />,
+            <see cref="T:Aspose.Words.Section" /> and
+            <see cref="T:Aspose.Words.Tables.Table" /> and
+            .</item>
+        </list>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Shaping.NamespaceDoc">
+      <summary>
+            The <b>Aspose.Words.Shaping</b> namespace contains classes to provide
+            support for OpenType features using external text shaping engines.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Properties.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Properties</b> namespace provides classes to work
+            with custom and built-in document properties such as title, keywords, company etc.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.BuildingBlocks.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.BuildingBlocks</b> namespace provides classes that allow to access 
+            and use AutoText, AutoCorrect entries and Building Blocks in a document.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Settings.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Settings</b> namespace contains classes and enums
+            that are used when specifying various settings and options stored in a document.
+            These are mail merge, write protection, compatibility and other settings.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Vba.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Vba</b> namespace provides classes to work with VBA projects.</para>
+        <para>A <see cref="T:Aspose.Words.Vba.VbaProject" /> inside the document is defined as a collection of <see cref="T:Aspose.Words.Vba.VbaModule" />.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Math.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Math</b> namespace contains classes that represent Office Math elements.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.WebExtensions.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.WebExtensions</b> namespace provides classes that allow to
+            customize elements and attributes that extend the XML vocabulary for representing Office Add-ins.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Themes.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Themes</b> namespace provides classes that allow to access theme information in Microsoft Word documents.</para>
+        <para>A document theme can specify fonts and colors to be used in a document. Themes are supported in Word 2007 and higher.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Markup.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Markup</b> namespace contains classes that
+            represent customer defined semantics in a document: smart tags, custom XML and
+            structured document tags (content controls).</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Lists.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Lists</b> namespace contains classes for working
+            with bulleted and numbered lists defined in a document.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Framesets.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Framesets</b> namespace provides classes and enumerations that
+            represents a frames page or a single frame on a frames page.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Reporting.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Reporting</b> namespace contains classes of the Aspose.Words' new reporting engine that 
+            supports report templates marked up with a language based on the LINQ Method Syntax.</p>
+        <p>This new reporting engine is more advanced than the original mail merge reporting engine 
+            <see cref="N:Aspose.Words.MailMerging" /> and allows to retrieve data from any .NET class, 
+            perform grouping, sorting, joining and interpret C# expressions.</p>
+        <seealso cref="N:Aspose.Words.MailMerging" />
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Tables.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Tables</b> namespace contains classes that
+            represent tables, rows, cells and their formatting.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Rendering.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Rendering</b> namespace provides classes that allow to
+             customize printing or rendering of documents.</para>
+        <para>To actually render, print or convert a document use the corresponding methods on the
+             <see cref="T:Aspose.Words.Document" /> object.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.IDocumentSavingCallback">
+      <summary>
+            Implement this interface if you want to have your own custom method called during saving a document.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.IPageSavingCallback">
+      <summary>
+            Implement this interface if you want to control how Aspose.Words saves separate pages when 
+            saving a document to fixed page formats.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.IResourceSavingCallback">
+      <summary>
+            Implement this interface if you want to control how Aspose.Words saves external resources (images, fonts and css) when 
+            saving a document to fixed page HTML or SVG.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.ICssSavingCallback">
+      <summary>
+            Implement this interface if you want to control how Aspose.Words saves CSS (Cascading Style Sheet) when 
+            saving a document to HTML.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.IDocumentPartSavingCallback">
+      <summary>
+            Implement this interface if you want to receive notifications and control how
+            Aspose.Words saves document parts when exporting a document to <see cref="F:Aspose.Words.SaveFormat.Html" /> 
+            or <see cref="F:Aspose.Words.SaveFormat.Epub" /> format.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.IFontSavingCallback">
+      <summary>
+            Implement this interface if you want to receive notifications and control how
+            Aspose.Words saves fonts when exporting a document to HTML format.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Saving</b> namespace provides classes and enumerations that
+            allow to specify additional options for saving or converting documents.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Saving.IImageSavingCallback">
+      <summary>
+            Implement this interface if you want to control how Aspose.Words saves images when 
+            saving a document to HTML. May be used by other formats.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.MailMerging.IMailMergeCallback">
+      <summary>
+            Implement this interface if you want to receive notifications while mail merge is performed.
+            </summary>
+    </member>
+    <member name="M:Aspose.Words.MailMerging.IMailMergeCallback.TagsReplaced">
+      <summary>
+            Called when "mustache" text tags are replaced with MERGEFIELD fields.
+            </summary>
+      <seealso cref="P:Aspose.Words.MailMerging.MailMerge.UseNonMergeFields" />
+    </member>
+    <member name="T:Aspose.Words.MailMerging.IMailMergeDataSourceRoot">
+      <summary>
+            Implement this interface to allow mail merge from a custom data source with master-detail data.
+            </summary>
+    </member>
+    <member name="M:Aspose.Words.MailMerging.IMailMergeDataSourceRoot.GetDataSource(System.String)">
+      <summary>
+            The Aspose.Words mail merge engine invokes this method when it encounters a beginning of a top-level mail merge region.
+            </summary>
+      <remarks>
+        <para>
+            When the Aspose.Words mail merge engines populates a document with data and encounters MERGEFIELD TableStart:TableName,
+            it invokes <see cref="M:Aspose.Words.MailMerging.IMailMergeDataSourceRoot.GetDataSource(System.String)" /> on this object. Your implementation needs to return a new data source object.
+            Aspose.Words will use the returned data source to populate the mail merge region.
+            </para>
+        <para>
+            If a data source (table) with the specified name does not exist, your implementation should return <c>null</c>.
+            </para>
+      </remarks>
+      <param name="tableName">The name of the mail merge region as specified in the template document. Case-insensitive.</param>
+      <returns>A data source object that will provide access to the data records of the specified table.</returns>
+    </member>
+    <member name="T:Aspose.Words.MailMerging.IMailMergeDataSource">
+      <summary>
+            Implement this interface to allow mail merge from a custom data source, such as a list of objects. Master-detail data is also supported.
+            </summary>
+      <remarks>
+        <para>When a data source is created, it should be initialized to point to BOF (before the first record).
+            The Aspose.Words mail merge engine will invoke <see cref="M:Aspose.Words.MailMerging.IMailMergeDataSource.MoveNext" /> to advance to next record and
+            then invoke <see cref="M:Aspose.Words.MailMerging.IMailMergeDataSource.GetValue(System.String,System.Object@)" /> for every merge field it encounters in the document or the current mail merge region.</para>
+        <seealso cref="T:Aspose.Words.MailMerging.MailMerge" />
+      </remarks>
+    </member>
+    <member name="M:Aspose.Words.MailMerging.IMailMergeDataSource.MoveNext">
+      <summary>
+            Advances to the next record in the data source.
+            </summary>
+      <returns>
+        <c>true</c> if moved to next record successfully; <c>false</c> if reached end of the data source.</returns>
+    </member>
+    <member name="M:Aspose.Words.MailMerging.IMailMergeDataSource.GetValue(System.String,System.Object@)">
+      <summary>
+            Returns a value for the specified field name or <c>false</c> if the field is not found.
+            </summary>
+      <param name="fieldName">The name of the data field.</param>
+      <param name="fieldValue">Returns the field value.</param>
+      <returns>
+        <c>true</c> if value was found.</returns>
+    </member>
+    <member name="M:Aspose.Words.MailMerging.IMailMergeDataSource.GetChildDataSource(System.String)">
+      <summary>
+            The Aspose.Words mail merge engine invokes this method when it encounters a beginning of a nested mail merge region.
+            </summary>
+      <remarks>
+        <para>
+            When the Aspose.Words mail merge engines populates a mail merge region with data and encounters the beginning of a nested
+            mail merge region in the form of MERGEFIELD TableStart:TableName, it invokes <see cref="M:Aspose.Words.MailMerging.IMailMergeDataSource.GetChildDataSource(System.String)" /> on the current
+            data source object. Your implementation needs to return a new data source object that will provide access to the child
+            records of the current parent record. Aspose.Words will use the returned data source to populate the nested mail merge region.
+            </para>
+        <para>
+            Below are the rules that the implementation of <see cref="M:Aspose.Words.MailMerging.IMailMergeDataSource.GetChildDataSource(System.String)" /> must follow.
+            </para>
+        <para>
+            If the table that is represented by this data source object has a related child (detail) table with the specified name,
+            then your implementation needs to return a new <see cref="T:Aspose.Words.MailMerging.IMailMergeDataSource" /> object that will provide access
+            to the child records of the current record.
+            
+            An example of this is Orders / OrderDetails relationship. Let's assume that the current <see cref="T:Aspose.Words.MailMerging.IMailMergeDataSource" /> object
+            represents the Orders table and it has a current order record. Next, Aspose.Words encounters "MERGEFIELD TableStart:OrderDetails"
+            in the document and invokes <see cref="M:Aspose.Words.MailMerging.IMailMergeDataSource.GetChildDataSource(System.String)" />. You need to create and return a <see cref="T:Aspose.Words.MailMerging.IMailMergeDataSource" />
+            object that will allow Aspose.Words to access the OrderDetails record for the current order.
+            </para>
+        <para>
+            If this data source object does not have a relation to the table with the specified name, then you need to return
+            a <see cref="T:Aspose.Words.MailMerging.IMailMergeDataSource" /> object that will provide access to all records of the specified table.
+            </para>
+        <para>
+            If a table with the specified name does not exist, your implementation should return <c>null</c>.
+            </para>
+      </remarks>
+      <param name="tableName">The name of the mail merge region as specified in the template document. Case-insensitive.</param>
+      <returns>A data source object that will provide access to the data records of the specified table.</returns>
+    </member>
+    <member name="P:Aspose.Words.MailMerging.IMailMergeDataSource.TableName">
+      <summary>
+             Returns the name of the data source.
+             </summary>
+      <remarks>
+        <p>If you are implementing <see cref="T:Aspose.Words.MailMerging.IMailMergeDataSource" />, return the name of the data
+             source from this property.</p>
+        <p>Aspose.Words uses this name to match against the mail merge region name specified
+             in the template document. The comparison between the data source name and
+             the mail merge region name is not case sensitive.</p>
+      </remarks>
+      <returns>The name of the data source. Empty string if the data source has no name.</returns>
+    </member>
+    <member name="T:Aspose.Words.MailMerging.IFieldMergingCallback">
+      <summary>
+            Implement this interface if you want to control how data is inserted into merge fields during a mail merge operation.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.MailMerging.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.MailMerging</b> namespace contains classes of the
+             "original" mail merge reporting engine.</p>
+        <p>This reporting engine requires the document to be marked up with Microsoft Word
+             mail merge fields, but supports more functionality than Microsoft Word's mail merge.</p>
+        <p>The engine allows to quickly and easily populate a report template with data from various
+             sources such as <b>DataTable</b>, <b>DataSet</b>, <b>DataView</b>, <b>IDataReader</b> or an array of values.</p>
+        <p>The <see cref="T:Aspose.Words.MailMerging.MailMerge" /> object which provides access to the reporting functionality
+             is available via the <see cref="P:Aspose.Words.Document.MailMerge">Document.MailMerge</see> property.</p>
+        <p>For the newer and more advanced reporting engine based on the LINQ method syntax see
+             <see cref="N:Aspose.Words.Reporting" />.</p>
+        <seealso cref="N:Aspose.Words.Reporting" />
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Loading.IDocumentLoadingCallback">
+      <summary>
+            Implement this interface if you want to have your own custom method called during loading a document.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Loading.IResourceLoadingCallback">
+      <summary>
+            Implement this interface if you want to control how Aspose.Words loads external resource when 
+            importing a document and inserting images using <see cref="T:Aspose.Words.DocumentBuilder" />.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Loading.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Loading</b> namespace provides classes and enumerations that
+            allow to specify additional options when loading documents.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Notes.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Notes</b> namespace provides classes to work with Microsoft Word endnotes and footnotes.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Fonts.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Fonts</b> namespace provides classes and enumerations to access information about
+            fonts used in a document.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Replacing.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Replacing</b> namespace provides classes to manipulate
+            with find/replace operations over the document tree.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Replacing.IReplacingCallback">
+      <summary>
+            Implement this interface if you want to have your own custom method called during a find and replace operation.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Fields.IBibliographyStylesProvider">
+      <summary>
+            Implement this interface to provide bibliography style for
+            the  <see cref="T:Aspose.Words.Fields.FieldBibliography" /> and <see cref="T:Aspose.Words.Fields.FieldCitation" /> fields when they're updated.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Fields.IFieldDatabaseProvider">
+      <summary>
+            Implement this interface to provide data for the <see cref="T:Aspose.Words.Fields.FieldDatabase" /> field when it's updated.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Fields.IFieldUpdatingProgressCallback">
+      <summary>
+            Implement this interface if you want to track field updating progress.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Fields.IFieldUpdatingCallback">
+      <summary>
+            Implement this interface if you want to have your own custom methods called during a field update.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Fields.IComparisonExpressionEvaluator">
+      <summary>
+            When implemented, allows to override default comparison expressions evaluation for the <see cref="T:Aspose.Words.Fields.FieldIf" /> and <see cref="T:Aspose.Words.Fields.FieldCompare" /> fields.
+            </summary>
+      <seealso cref="P:Aspose.Words.Fields.FieldOptions.ComparisonExpressionEvaluator" />
+    </member>
+    <member name="T:Aspose.Words.Fields.IFieldUpdateCultureProvider">
+      <summary>
+            When implemented, provides a <see cref="T:System.Globalization.CultureInfo" /> object that should be used during the update of a particular field.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Fields.IBarcodeGenerator">
+      <summary>
+            Public interface for barcode custom generator. Implementation should be provided by user.
+            </summary>
+      <remarks>
+            Generator instance should be passed through the <see cref="P:Aspose.Words.Fields.FieldOptions.BarcodeGenerator" /> property.
+            </remarks>
+    </member>
+    <member name="T:Aspose.Words.Fields.IFieldUserPromptRespondent">
+      <summary>
+            Represents the respondent to user prompts during field update.
+            </summary>
+      <remarks>
+            The ASK and FILLIN fields are the examples of fields that prompt the user for some response. Implement this interface
+            and assign it to the <see cref="P:Aspose.Words.Fields.FieldOptions.UserPromptRespondent" /> property to establish interaction between field update
+            and the user.
+            </remarks>
+    </member>
+    <member name="M:Aspose.Words.Fields.IFieldUserPromptRespondent.Respond(System.String,System.String)">
+      <summary>
+            When implemented, returns a response from the user on prompting.
+            Your implementation should return <c>null</c> to indicate that the user has not responded to the prompt
+            (i.e. the user has pressed the Cancel button in the prompt window).
+            </summary>
+      <param name="promptText">Prompt text (i.e. title of the prompt window).</param>
+      <param name="defaultResponse">Default user response (i.e. initial value contained in the prompt window).</param>
+      <returns>User response (i.e. confirmed value contained in the prompt window).</returns>
+    </member>
+    <member name="T:Aspose.Words.Fields.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Fields</b> namespace contains classes that
+            represent Microsoft Word fields in a document.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Drawing.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Drawing</b> namespace provides classes that allow to create and modify drawing objects.</para>
+        <para>All drawing objects in Microsoft Word documents are represented by instances of the <see cref="T:Aspose.Words.Drawing.Shape" /> and <see cref="T:Aspose.Words.Drawing.GroupShape" /> classes.
+             An object of  the <see cref="T:Aspose.Words.Drawing.Shape" /> class is a node in a document and can represent a picture, textbox, AutoShape or an OLE object.</para>
+        <para>The classes in this namespace support the latest (Word 2007 - 2013 DrawingML) and the earlier (pre Word 2007 - Office Art) shapes.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Drawing.Ole.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Drawing.Ole</b> namespace contains classes to work with OLE / ActiveX controls and forms in Microsoft Word documents.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Drawing.Core.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Drawing</b> namespace contains classes that allow to
+            create and modify drawing objects in Microsoft Word documents.</p>
+        <p>Aspose.Words supports all drawing objects in Microsoft Word documents, including
+            OfficeArt shapes, textboxes, pictures, diagrams, OLE objects and ActiveX controls.</p>
+        <p>The main classes in this namespace are:</p>
+        <list type="bullet">
+          <item>
+            <see cref="T:Aspose.Words.Drawing.Shape" /> represents an object in the drawing layer, 
+            such as an AutoShape, textbox, freeform, OLE object, ActiveX control, or picture.</item>
+          <item>
+            <see cref="T:Aspose.Words.Drawing.GroupShape" /> represents a group of shapes 
+            in a document.</item>
+          <item>
+            <see cref="T:Aspose.Words.Drawing.ShapeBase" /> is the base class for the
+            shape and group shape classes, provides all common shape properties such as position, 
+            size and text wrapping. A shape is a node in the document tree.</item>
+        </list>
+        <p>Although not every type of drawing object can be programmatically created and not every shape
+            property can be accessed, all drawing objects are fully preserved in Microsoft Word documents
+            during document open-save operations.</p>
+        <p>Names of classes, methods and properties in this namespace correspond to VML DOM where possible.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Drawing.Charts.IChartDataPoint">
+      <summary>
+            Contains properties of a single data point on the chart.
+            </summary>
+    </member>
+    <member name="P:Aspose.Words.Drawing.Charts.IChartDataPoint.Explosion">
+      <summary>
+            Specifies the amount the data point shall be moved from the center of the pie.
+            Can be negative, negative means that property is not set and no explosion should be applied.
+            Applies only to Pie charts.
+            </summary>
+    </member>
+    <member name="P:Aspose.Words.Drawing.Charts.IChartDataPoint.InvertIfNegative">
+      <summary>
+            Specifies whether the parent element shall inverts its colors if the value is negative.
+            </summary>
+    </member>
+    <member name="P:Aspose.Words.Drawing.Charts.IChartDataPoint.Bubble3D">
+      <summary>
+            Specifies whether the bubbles in Bubble chart should have a 3-D effect applied to them.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.Drawing.Charts.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Drawing.Charts</b> namespace provides classes that allow to access charts in Microsoft Word documents.</para>
+        <para>The chart supported are Word 2007 (or higher) DrawingML Charts.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.DigitalSignatures.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.DigitalSignatures</b> namespace provides classes to sign documents and verify signatures.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Comparing.NamespaceDoc">
+      <summary>
+        <para>The <b>Aspose.Words.Comparing</b> namespace provides classes and enumerations that allow to specify additional options when comparing documents.</para>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Bibliography.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Bibliography</b> namespace provides classes that allow to access 
+            a list of bibliography sources available in a document.</p>
+        <p>The bibliography includes information about various sources, such as books, articles, websites, 
+            or other materials, used in the creation of the document.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.AI.IAiModelText">
+      <summary>
+            The common interface for AI models designed to generate a variety of text-based content.
+            </summary>
+    </member>
+    <member name="T:Aspose.Words.AI.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.AI</b> namespace enables seamless integration with large language models (LLMs), such as OpenAI and Gemini,
+            providing robust support for AI-powered document processing.</p>
+        <p>Classes within this namespace allow to leverage advanced AI capabilities to perform tasks like summarizing, translating, and analyzing content of documents loaded into Aspose.Words.</p>
+        <p>This functionality extends the power of document automation, facilitating efficient, high-quality text transformations that support a wide range of use cases.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.LowCode.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.LowCode</b> contains classes and methods to handle complex general operations in a low code way.</p>
+        <p>Represents a group of methods intended to convert, merge, split, compress etc. a variety of different types of documents,
+            ultimately streamlining the integration process and facilitating efficient data consolidation across multiple formats.</p>
+        <p>Provides comprehensive document convert, merge, split with 35+ supported file formats.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Layout.IPageLayoutCallback">
+      <summary>
+            Implement this interface if you want to have your own custom method called during build and rendering of page layout model.
+            </summary>
+      <remarks>
+            The primary use for this interface is to allow application code to abort build process.<para />
+            It is possible to build page layout model for only a few pages at start of the document then abort process and render only what has been built already.<para />
+            Note, however, that rendering results may not match what would be rendered for each page if process would have finished.<para />
+            This technique may not work for every document or may fail completely.<para /></remarks>
+      <seealso cref="P:Aspose.Words.Layout.LayoutOptions.Callback" />
+    </member>
+    <member name="T:Aspose.Words.Layout.NamespaceDoc">
+      <summary>
+        <p>The <b>Aspose.Words.Layout</b> namespace provides classes that allow to access 
+            information such as on what page and where on a page particular document elements 
+            are positioned, when the document is formatted into pages.</p>
+      </summary>
+    </member>
+    <member name="T:Aspose.Words.Shaping.ITextShaperFactory">
+      <summary>
+            An interface of a factory for constructing <see cref="T:Aspose.Words.Shaping.ITextShaper" /> implementations.
+            </summary>
+    </member>
+  </members>
+</doc>

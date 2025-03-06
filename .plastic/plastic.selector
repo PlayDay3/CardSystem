@@ -1,0 +1,4 @@
+repository "MedicineSystem@xiao-factory@cloud.cn"
+  path "/"
+    br "/main"
+    co "/main"

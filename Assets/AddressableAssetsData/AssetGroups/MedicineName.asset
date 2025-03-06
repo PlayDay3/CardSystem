@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: MedicineName
+  m_EditorClassIdentifier: 
+  m_GroupName: MedicineName
+  m_Data:
+    m_SerializedData: []
+  m_GUID: dd1d20b7bcb401e4d8fb835d3067159e
+  m_SerializeEntries:
+  - m_GUID: 979c62d8385ef414c8baa39359246269
+    m_Address: Name1
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MedicineName
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 6f1d1c08ab417614c8b1d80b78a9a173
+    m_Address: Assets/MedicineSystem/Name/MedicineName 1.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MedicineName
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b98799b65d0a02644ac572256d49da06
+    m_Address: Assets/MedicineSystem/Name/MedicineName 2.asset
+    m_ReadOnly: 0
+    m_SerializedLabels:
+    - MedicineName
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: 77f3ef9a004ba444faa62a0949da1e51, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 41828a956153ab446a105277b68eae31, type: 2}
+    - {fileID: 11400000, guid: 29e669ad7761cf84cb08108f6a19a93d, type: 2}
