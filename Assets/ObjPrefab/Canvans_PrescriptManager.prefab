@@ -200,8 +200,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u65B0\u5EFA\u5904\u65B9\u5355"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 05f86bc5fb1913044a91c5dbabb16c40, type: 2}
-  m_sharedMaterial: {fileID: -8038364749659920633, guid: 05f86bc5fb1913044a91c5dbabb16c40,
+  m_fontAsset: {fileID: 11400000, guid: f737db678b54e0249ae114f63356a5b4, type: 2}
+  m_sharedMaterial: {fileID: 2556921811394286594, guid: f737db678b54e0249ae114f63356a5b4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -416,8 +416,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SelectMessage:
+    Patient:
+      Name: Name
+      age: 
+      Date: 2025-03-06 13:15:46
+      Sex: 
+      Description: 
+      Location: 
+      number: 
+      T: 0
+      P: 0
+      BP_b: 0
+      BP_p: 0
+      Blood_Sugar: 0
     ListId: 0
+    PrescriptionId: 
     Doctor: 
-    Cost: 0
+    Check: 
+    SignCost: 0
+    InjectionCost: 0
+    TreatmentCost: 0
+    MedicineCost: 0
+    OriginalCost: 0
+    OtherCost: 0
+    SumCost: 0
+    Profit: 0
     MedicineLsit: []
+    isPaid: 0
   PrescriptList: []
+  SearchList: []
+  customPath: 

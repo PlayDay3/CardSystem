@@ -703,8 +703,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u8FDB\u5165"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 05f86bc5fb1913044a91c5dbabb16c40, type: 2}
-  m_sharedMaterial: {fileID: -8038364749659920633, guid: 05f86bc5fb1913044a91c5dbabb16c40,
+  m_fontAsset: {fileID: 11400000, guid: f737db678b54e0249ae114f63356a5b4, type: 2}
+  m_sharedMaterial: {fileID: 2556921811394286594, guid: f737db678b54e0249ae114f63356a5b4,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
