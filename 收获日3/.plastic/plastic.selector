@@ -1,4 +1,0 @@
-repository "收获日3@tj_xiao_factory@cloud.cn"
-  path "/"
-    br "/main"
-    co "/main"
