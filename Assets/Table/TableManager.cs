@@ -317,6 +317,7 @@ public class TableManager : MonoBehaviour
             UIManager.Instance.ShowPanel(3);
             prescription.instance.PrescriptionMessage.MedicineLsit = selledTable.ToList();
             prescription.instance.PrescriptionMessage.MedicineCost = 0;
+            prescription.instance.PrescriptionMessage.OriginalCost = 0;
             foreach (MedicineData data in prescription.instance.PrescriptionMessage.MedicineLsit)
             {
                 if (data.unit == BaseEnum.granule || data.unit == BaseEnum.bag)

@@ -61,6 +61,7 @@ public class TextWord : MonoBehaviour
         OpenFile(filePath);
     }
 
+
     // 生成处方文档的方法
     public void GeneratePrescriptionDocument(string filePath)
     {
@@ -115,17 +116,19 @@ public class TextWord : MonoBehaviour
             // 第一行
             for (int i = 0; i < Prescription.MedicineLsit.Count; i++)
             {
+
                 builder.InsertCell(); builder.Write($"{i + 1}");
                 builder.InsertCell(); builder.Write($"{Prescription.MedicineLsit[i].MedicineMessage.Name}");
                 builder.InsertCell(); builder.Write($"{Prescription.MedicineLsit[i].MedicineMessage.dosage}{Prescription.MedicineLsit[i].MedicineMessage.doseunit}" +
                     $"*{Prescription.MedicineLsit[i].MedicineMessage.capacity}{Prescription.MedicineLsit[i].MedicineMessage.minunit}/{Prescription.MedicineLsit[i].MedicineMessage.maxunit}");
                 builder.EndRow();
 
+
                 // 用法
                 builder.InsertCell();
-                builder.Write($"用法:{Prescription.MedicineLsit[i].usage}");
+                builder.Write($"用法:{Prescription.MedicineLsit[i].Useway.ToString().Replace("_","/")}");
                 builder.InsertCell();
-                builder.Write($"每次用量:{Prescription.MedicineLsit[i].eatdose}{Prescription.MedicineLsit[i].MedicineMessage.minunit}");
+                builder.Write($"每次:{Prescription.MedicineLsit[i].eatdose}{Prescription.MedicineLsit[i].MedicineMessage.minunit}");
                 builder.InsertCell();
                 builder.Write($"每日{Prescription.MedicineLsit[i].Times}次\t{Prescription.MedicineLsit[i].Day}天\t{Prescription.MedicineLsit[i].addnumber}{Prescription.MedicineLsit[i].MedicineMessage.minunit}");
                 builder.EndRow();
@@ -140,12 +143,12 @@ public class TextWord : MonoBehaviour
             builder.ParagraphFormat.Alignment = ParagraphAlignment.Left;
             builder.Writeln($"医师:{Prescription.Doctor}\t\t挂号费{Prescription.SignCost}\t注射费{Prescription.InjectionCost}\t治疗费{Prescription.TreatmentCost}\t");
             builder.Writeln();
-            builder.Writeln($"审核:{Prescription.Check}\t\t药物费{Prescription.MedicineCost}\t基本费{Prescription.OriginalCost}\t其他{Prescription.OtherCost}");
+            builder.Writeln($"审核:{Prescription.Check}\t\t药物费{Prescription.MedicineCost}\t基本费{Prescription.OriginalCost}\t其他{Prescription.OtherCost}\t\t收入差额{Prescription.Profit}");
             //builder.Writeln($"挂号费{Prescription.SignCost}\t注射费{Prescription.InjectionCost}\t治疗费{Prescription.TreatmentCost}\t" +
             //    $"药物费{Prescription.MedicineCost}\t总金额:{Prescription.MedicineCost}");
             builder.Writeln();
             builder.ParagraphFormat.Alignment = ParagraphAlignment.Right;
-            builder.Writeln($"总计:{Prescription.SumCost}\n利润:{Prescription.Profit}");
+            builder.Writeln($"总计:{Prescription.SumCost}");
             // 保存文档
             doc.Save(filePath);
 

@@ -69,6 +69,10 @@ public class prescription : MonoBehaviour
         return new Rect(x, y, width, height);
     }
 
+    public static string ReplaceUnderscoreWithSlash(string input)
+    {
+        return input.Replace("_", "/");
+    }
     public void SaveDiagnosisReport()
     {
         StartCoroutine(CaptureUIElement());
@@ -199,9 +203,11 @@ public class prescription : MonoBehaviour
         
         foreach(MedicineData message in PrescriptionMessage.MedicineLsit)
         {
+            string TempUseway = ReplaceUnderscoreWithSlash(message.Useway.ToString());
+
             TempPrescription.text += message.MedicineMessage.Name +"    "+message.MedicineMessage.dosage+message.MedicineMessage.doseunit+"*"+
                message.MedicineMessage.capacity + message.MedicineMessage.minunit+"/"+message.MedicineMessage.maxunit+ "      "+$"总计:{message.addnumber}{message.MedicineMessage.minunit}"+ "\n";
-            TempPrescription.text += "用法:" + message.usage + "        " + "单次服用:" + message.eatdose * message.MedicineMessage.dosage + message.MedicineMessage.doseunit;
+            TempPrescription.text += "用法:" + TempUseway + "        " + "单次:" + message.eatdose * message.MedicineMessage.dosage + message.MedicineMessage.doseunit;
             TempPrescription.text += "\t"+$"每日{message.Times}次\t" + message.Day + "天\n" ;
 
 

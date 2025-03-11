@@ -11,7 +11,17 @@ public enum BaseEnum
     box,//ºĞ
     bag,//´ü
     bottle,
-    Á£,Æ¬,ºĞ,´ü,Æ¿,Ö§,
+    Á£,Æ¬,ºĞ,´ü,Æ¿,Ö§,°ü,Ïä,¼ş
+}
+
+public enum Useway
+{
+    ¿Ú·ş,
+    ¾²Âö×¢Éä,
+    ÍâÓÃ,
+    ivdrip40gtt_min,
+    ivdrip15gtt_min,
+    ivdrip60gtt_min,
 }
 
 public enum Times

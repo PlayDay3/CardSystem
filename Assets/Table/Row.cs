@@ -129,15 +129,18 @@ public class Row : MonoBehaviour
                         
                         break;
                     case "支":
-                        TempDrop.value = 2;
-                        
+                        TempDrop.value = 2;                       
                         break;
                     case "瓶":
-                        TempDrop.value = 3;
-                        
+                        TempDrop.value = 3;                       
+                        break;
+                    case "包":
+                        TempDrop.value = 4;
+                        break;
+                    case "袋":
+                        TempDrop.value = 5;
                         break;
                 }
-
                 TempDrop.RefreshShownValue();
 
                 TempDrop = this.transform.Find("规格")?.GetChild(4).GetComponent<TMP_Dropdown>();
@@ -148,6 +151,15 @@ public class Row : MonoBehaviour
                         break;
                     case "瓶":
                         TempDrop.value = 1;
+                        break;
+                    case "箱":
+                        TempDrop.value = 2;
+                        break;
+                    case "件":
+                        TempDrop.value = 3;
+                        break;
+                    case "包":
+                        TempDrop.value = 4;
                         break;
                 }
                 TempDrop.RefreshShownValue();
@@ -170,10 +182,32 @@ public class Row : MonoBehaviour
                 }
 
 
-                field = this.transform.Find("用法")?.GetChild(0)?.GetComponent<TMP_InputField>();
-                if (field) field.text = medicineData.usage;
+                //field = this.transform.Find("用法")?.GetChild(0)?.GetComponent<TMP_InputField>();
+                //if (field) field.text = medicineData.usage;
 
-
+                TempDrop = this.transform.Find("用法")?.GetChild(1).GetComponent<TMP_Dropdown>();
+                switch (medicineData.Useway.ToString())
+                {
+                    case "口服":
+                        TempDrop.value = 0;
+                        break;
+                    case "静脉滴注":
+                        TempDrop.value = 1;
+                        break;
+                    case "外用":
+                        TempDrop.value = 2;
+                        break;
+                    case "ivdrip15gtt_min":
+                        TempDrop.value = 3;
+                        break;
+                    case "ivdrip40gtt_min":
+                        TempDrop.value = 4;
+                        break;
+                    case "ivdrip60gtt_min":
+                        TempDrop.value = 5;
+                        break;
+                }
+                TempDrop.RefreshShownValue();
 
 
                 field = this.transform.Find("产地")?.GetChild(0)?.GetComponent<TMP_InputField>();
@@ -305,6 +339,12 @@ public class Row : MonoBehaviour
                     case 3:
                         medicineData.MedicineMessage.minunit = BaseEnum.瓶;
                         break;
+                    case 4:
+                        medicineData.MedicineMessage.minunit = BaseEnum.包;
+                        break;
+                    case 5:
+                        medicineData.MedicineMessage.minunit = BaseEnum.袋;
+                        break;
 
                 }
             }
@@ -315,14 +355,19 @@ public class Row : MonoBehaviour
                 {
                     case 0:
                         medicineData.MedicineMessage.maxunit = BaseEnum.盒;
-                        //medicineData.number=medicineData.granuleNumber;
-
                         break;
                     case 1:
                         medicineData.MedicineMessage.maxunit = BaseEnum.瓶;
-                        //medicineData.number=medicineData.BoxNumber;
                         break;
-
+                    case 2:
+                        medicineData.MedicineMessage.maxunit = BaseEnum.箱;
+                        break;
+                    case 3:
+                        medicineData.MedicineMessage.maxunit = BaseEnum.件;
+                        break;
+                    case 4:
+                        medicineData.MedicineMessage.maxunit = BaseEnum.包;
+                        break;
                 }
             }
 
@@ -341,8 +386,35 @@ public class Row : MonoBehaviour
             }
 
 
+            //if (this.transform.Find("用法"))
+            //    medicineData.usage = this.transform.Find("用法")?.GetChild(0).GetComponent<TMP_InputField>().text;
+
             if (this.transform.Find("用法"))
-                medicineData.usage = this.transform.Find("用法")?.GetChild(0).GetComponent<TMP_InputField>().text;
+            {
+                TMP_Dropdown dropdown = this.transform.Find("用法")?.GetChild(1).GetComponent<TMP_Dropdown>();
+                switch (dropdown.value)
+                {
+                    case 0:
+                        medicineData.Useway=Useway.口服;
+                        break;
+                    case 1:
+                        medicineData.Useway = Useway.静脉注射;
+                        break;
+                    case 2:
+                        medicineData.Useway = Useway.外用;
+                        break;
+                    case 3:
+                        medicineData.Useway = Useway.ivdrip15gtt_min;
+                        break;
+                    case 4:
+                        medicineData.Useway = Useway.ivdrip40gtt_min;
+                        break;
+                    case 5:
+                        medicineData.Useway = Useway.ivdrip60gtt_min;
+                        break;
+
+                }
+            }
 
             if (this.transform.Find("产地"))
                 medicineData.MedicineMessage.source = this.transform.Find("产地")?.GetChild(0).GetComponent<TMP_InputField>().text;
@@ -575,6 +647,12 @@ public class Row : MonoBehaviour
             case BaseEnum.粒:
                 UnitDrop.options[0].text = "粒";
                 break;
+            case BaseEnum.包:
+                UnitDrop.options[0].text = "包";
+                break;
+            case BaseEnum.袋:
+                UnitDrop.options[0].text = "袋";
+                break;
         }
         switch (medicineData.MedicineMessage.maxunit)
         {
@@ -583,6 +661,15 @@ public class Row : MonoBehaviour
                 break;
             case BaseEnum.盒:
                 UnitDrop.options[1].text = "盒";
+                break;
+            case BaseEnum.箱:
+                UnitDrop.options[1].text = "箱";
+                break;
+            case BaseEnum.件:
+                UnitDrop.options[1].text = "件";
+                break;
+            case BaseEnum.包:
+                UnitDrop.options[1].text = "包";
                 break;
         }
         UnitDrop.RefreshShownValue();
@@ -661,6 +748,12 @@ public class Row : MonoBehaviour
         TableManager.Instance.EditList(medicineData);
         TableManager.Instance.displayTable();
     }
+
+
+
+
+
+
 
 
 

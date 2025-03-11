@@ -17,6 +17,7 @@ public class MedicineData
     public int Day;//服用天数
     public float eatdose;//一次服用剂量
     public string usage;//用法
+    public Useway Useway;
     public int number;
     public int addnumber;//添加数量
     public int BoxNumber;
@@ -40,6 +41,7 @@ public class MedicineData
         this.MedicineMessage.maxunit=other.MedicineMessage.maxunit;
         this.MedicineMessage.dosage=other.MedicineMessage.dosage;
         this.usage= other.usage;
+        Useway= other.Useway;
         this.Day = other.Day;
         this.eatdose = other.eatdose;
         this.number = other.number;

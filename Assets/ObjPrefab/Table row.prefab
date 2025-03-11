@@ -355,6 +355,7 @@ MonoBehaviour:
     Day: 0
     eatdose: 0
     usage: 
+    Useway: 0
     number: 0
     addnumber: 0
     BoxNumber: 0
@@ -458,13 +459,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 18.5
-  m_fontSizeBase: 18.5
+  m_fontSize: 17
+  m_fontSizeBase: 17
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1881,7 +1882,7 @@ PrefabInstance:
     - target: {fileID: 8688938943640113519, guid: 3b9f856c53949f944b8ecc214fc9bfde,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 191.7289
+      value: 228.1049
       objectReference: {fileID: 0}
     - target: {fileID: 8688938943640113519, guid: 3b9f856c53949f944b8ecc214fc9bfde,
         type: 3}
@@ -1926,7 +1927,7 @@ PrefabInstance:
     - target: {fileID: 8688938943640113519, guid: 3b9f856c53949f944b8ecc214fc9bfde,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 30.3
+      value: 12.112
       objectReference: {fileID: 0}
     - target: {fileID: 8688938943640113519, guid: 3b9f856c53949f944b8ecc214fc9bfde,
         type: 3}
